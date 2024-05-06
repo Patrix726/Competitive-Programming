@@ -1,3 +1,5 @@
+# Link for the problem
+# https://www.codewars.com/kata/54acc128329e634e9a000362/python
 def traverse_TCP_states(events):
     state = "CLOSED"  # initial state, always
     eventDictionary = {
@@ -16,18 +18,4 @@ def traverse_TCP_states(events):
         else:
             return "ERROR"
     return state
-
-# allEvents = ["APP_PASSIVE_OPEN", "APP_ACTIVE_OPEN", "APP_SEND",
-#               "APP_CLOSE", "APP_TIMEOUT", "RCV_SYN", "RCV_ACK", 
-#               "RCV_SYN_ACK", "RCV_FIN", "RCV_FIN_ACK"]
-# states = ["CLOSED", "LISTEN", "SYN_SENT", "SYN_RCVD", "ESTABLISHED", 
-#           "CLOSE_WAIT", "LAST_ACK", "FIN_WAIT_1", "FIN_WAIT_2", 
-#           "CLOSING", "TIME_WAIT"]
-# eventDictionary = [
-#     [{0 : 1},{1:2}],
-#     [{5:3},{2:2},{3:0},
-#      [{3:7}],
-#      [{3:7}]
-#      ]
-# ]
 print(traverse_TCP_states(["APP_ACTIVE_OPEN"]))
