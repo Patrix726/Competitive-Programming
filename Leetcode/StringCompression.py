@@ -36,7 +36,6 @@ def compress(chars: list[str]) -> int:
         else:
             for j in str(count):
                 chars.append(j)
-    print(chars)
     return len(s)
 
 
