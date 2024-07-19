@@ -20,7 +20,7 @@ class Solution:
             lq = len(queue)
 
             for i in range(lq):
-                node = queue.popLeft()
+                node = queue.popleft()
                 if node.val == val:
                     return node
                 if node:
