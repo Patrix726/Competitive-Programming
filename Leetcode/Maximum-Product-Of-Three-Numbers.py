@@ -7,9 +7,9 @@ class Solution:
             return nums[0] * nums[1] * nums[2]
         maxNums = nums[:3]
         minNums = [-1 * num for num in nums[:3]]
+        heapify(maxNums)
+        heapify(minNums)
         for num in nums[3:]:
-            heapify(maxNums)
-            heapify(minNums)
             heappushpop(maxNums, num)
             heappushpop(minNums, -1 * num)
         maxNum = max(maxNums)
