@@ -1,17 +1,11 @@
-def productExceptSelf(nums: list[int]) -> list[int]:
-    product = 1
-    numOfZeroes = 0
-    for i in nums:
-        if i == 0:
-            numOfZeroes += 1
-        else:
-            product *= i
-    if numOfZeroes == 0:
-        return list(map(lambda x: product // x, nums))
-    elif numOfZeroes == 1:
-        return list(map(lambda x: 0 if x != 0 else product, nums))
-    else:
-        return list(map(lambda x: 0, nums))
-
-
-print(productExceptSelf([-1, 1, -3, 3]))
+class Solution:
+    def productExceptSelf(self, nums: list[int]) -> list[int]:
+        n = len(nums)
+        left_arr = [1]*(n+1)
+        right_arr = [1]*(n+1)
+        for i in range(1,n+1):
+            left_arr[i] = left_arr[i-1]*nums[i-1]
+        for i in range(n-1,-1,-1):
+            right_arr[i] = right_arr[i+1]*nums[i]
+        return [left_arr[i] * right_arr[i+1] for i in range(n)]
+        
